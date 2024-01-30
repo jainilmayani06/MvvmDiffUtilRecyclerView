@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/enter_the_description"
                 android:layout_marginTop="5dp"
-                android:id="@+id/edDesclL">
+                android:id="@+id/edTaskDescL">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"

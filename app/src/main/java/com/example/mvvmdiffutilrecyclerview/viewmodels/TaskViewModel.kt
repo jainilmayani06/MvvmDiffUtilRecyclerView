@@ -12,7 +12,25 @@ class TaskViewModel(application: Application) : AndroidViewModel(application) {
     private val taskRepository = TaskRepository(application)
 
 
-    fun inssertTask(task: Task): MutableLiveData<Resource<Long>> {
+    fun getTaskList() = taskRepository.getTaskList()
+
+    fun insertTask(task: Task): MutableLiveData<Resource<Long>> {
         return taskRepository.insertTask(task)
+    }
+
+    /*fun deleteTask(task: Task): MutableLiveData<Resource<Int>> {
+        return taskRepository.deleteTask(task)
+    }*/
+
+    fun deleteTaskUsingId(taskId: String): MutableLiveData<Resource<Int>> {
+        return taskRepository.deleteTaskUsingId(taskId)
+    }
+
+    fun updateTask(task: Task): MutableLiveData<Resource<Int>> {
+        return taskRepository.updateTask(task)
+    }
+
+    fun updateTaskParticularField(taskId: String,title: String,description: String): MutableLiveData<Resource<Int>> {
+        return taskRepository.updateTaskParticularField(taskId, title, description)
     }
 }
